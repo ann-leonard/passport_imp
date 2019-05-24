@@ -2,9 +2,7 @@ var db = require("../models");
 module.exports = function(app, passport) {
   
   app.get("/login", function(req, res) {
-    db.Users.findOne({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+    
   });
 
   
@@ -19,14 +17,13 @@ module.exports = function(app, passport) {
         req.login(res.id, function(err){
           if(err){
             response.send({redirectUrl:"/"})
-          }
+          } else{
           console.log(res.id)
           response.send({err: 0, redirectUrl: "/account"});
-    
+          }
         })
       })
     })
-
   });
 
   // Create a new example

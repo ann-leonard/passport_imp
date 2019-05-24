@@ -9,9 +9,10 @@ module.exports = function(app) {
 
   app.get('/account', function(req,res){
     console.log(req.isAuthenticated())
-   // passport.authenticate('local', { failureRedirect: '/login' }),
-   // function(req, res) {
+    passport.authenticate('local', { failureRedirect: '/login' }),
+    function(req, res) {
       res.sendFile(path.join(__dirname, "../public/account.html"));
-   // };
+    };
+  res.end()
   })
 };
