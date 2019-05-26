@@ -19,7 +19,7 @@ module.exports = function(app, passport) {
             response.send({redirectUrl:"/"})
           } else{
           console.log(res.id)
-          response.send({err: 0, redirectUrl: "/account"});
+           return response.send({err: 0, redirectUrl: "/account"});
           }
         })
       })
